@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal CAM Funcional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="branding">
+      <img src="logo.png" alt="Logo CAM">
+      <h1>Menú Interactivo</h1>
+      <button class="config-button" onclick="openConfig()">⚙️</button>
+    </div>
+  </header>
+  <main class="main-content">
+    <h2>Selecciona un Alumno</h2>
+    <div id="student-list" class="grid"></div>
+    <h2>Categorías</h2>
+    <div id="category-list" class="grid"></div>
+    <h2>Productos</h2>
+    <div id="product-list" class="grid"></div>
+    <h2>Carrito</h2>
+    <ul id="cart-list"></ul>
+    <p><strong>Total: $<span id="cart-total">0</span></strong></p>
+  </main>
+  <div id="config-panel" class="config-panel hidden">
+    <h2>Configuración</h2>
+    <section>
+      <h3>Alumnos</h3>
+      <input id="student-name" placeholder="Nombre del alumno" />
+      <button onclick="addStudent()">Agregar</button>
+      <ul id="student-config-list"></ul>
+    </section>
+    <section>
+      <h3>Categorías</h3>
+      <input id="category-name" placeholder="Nombre de categoría" />
+      <button onclick="addCategory()">Agregar</button>
+      <ul id="category-config-list"></ul>
+    </section>
+    <section>
+      <h3>Productos</h3>
+      <input id="product-name" placeholder="Nombre del producto" />
+      <input id="product-price" type="number" placeholder="Precio" />
+      <select id="product-category"></select>
+      <button onclick="addProduct()">Agregar</button>
+      <ul id="product-config-list"></ul>
+    </section>
+    <button onclick="closeConfig()">Cerrar</button>
+  </div>
+  <script src="portal.js"></script>
+</body>
+</html>
