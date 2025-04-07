@@ -1,7 +1,9 @@
 class App {
   constructor() {
-    // Alumno de ejemplo
     this.currentStudent = { name: "María López" };
+    this.currentOrder = {
+      ...
+    };
 
     // Orden de ejemplo
     this.currentOrder = {
