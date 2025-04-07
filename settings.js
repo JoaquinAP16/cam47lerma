@@ -1,1 +1,0 @@
-window.schoolSettings = { schoolName: 'CAM', logoURL: 'logo.png' };
