@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal CAM</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="branding">
+      <img src="logo.png" alt="Logo CAM" />
+      <div>
+        <h1>Menú Interactivo</h1>
+        <p>Configuración Accesible - CAM</p>
+      </div>
+      <button id="config-btn" class="config-button" onclick="openConfig()">⚙️</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div id="loading">Cargando aplicación...</div>
+    <div id="student-selector" style="display:none;">Vista de alumnos activa</div>
+    <button onclick="generatePurchaseNote(window.app.currentOrder, window.app.currentStudent, 'Docente', 'Taller de Bebidas', 'Efectivo')" class="print-button">🖨️ Imprimir Nota</button>
+  </main>
+
+  <div id="config-panel" class="config-panel hidden">
+    <div class="config-header">
+      <img src="logo.png" class="config-logo" />
+      <h2>Configuración del Menú</h2>
+      <button onclick="closeConfig()">✖</button>
+    </div>
+    <div class="config-body">
+      <p>Aquí podrás editar alumnos, categorías y productos.</p>
+    </div>
+  </div>
+
+  <footer class="footer">Desarrollado para CAM - Ver. Final</footer>
+
+  <script src="settings.js"></script>
+  <script src="generate-pdf.js"></script>
+  <script src="app.js"></script>
+  <script src="main.js"></script>
+  <script src="config-panel.js"></script>
+</body>
+</html>
