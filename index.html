@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Menú Interactivo para el taller de Preparación de Bebidas y Alimentos" />
+  <title>Menú Interactivo - Taller de Bebidas y Alimentos</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <div id="app" class="app-container">
+    <header class="app-header">
+      <h1>Menú Interactivo</h1>
+      <p>Taller de Preparación de Bebidas y Alimentos</p>
+    </header>
+
+    <main class="app-content">
+      <div id="loading" class="loading-container">
+        <p>Cargando aplicación...</p>
+      </div>
+
+      <div id="student-selector" style="display: none;">
+        <p>Simulación de selector de alumnos</p>
+      </div>
+
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="generatePurchaseNote(window.app.currentOrder, window.app.currentStudent, 'Nombre del Docente', 'Taller de Alimentos', 'Efectivo')">
+          🖨️ Imprimir Nota de Compra
+        </button>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>Desarrollado para Escuela de Educación Especial</p>
+    </footer>
+  </div>
+
+  <script src="settings.js"></script>
+  <script src="header-inject.js"></script>
+  <script src="generate-pdf.js"></script>
+  <script src="app.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
