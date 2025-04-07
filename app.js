@@ -1,9 +1,7 @@
 class App {
   constructor() {
+    // Alumna de ejemplo
     this.currentStudent = { name: "María López" };
-    this.currentOrder = {
-      ...
-    };
 
     // Orden de ejemplo
     this.currentOrder = {
@@ -21,11 +19,10 @@ class App {
     // Oculta la pantalla de carga
     document.getElementById('loading').style.display = 'none';
 
-    // Muestra la sección del selector de alumnos (puede ser cualquier parte de tu app)
+    // Muestra cualquier parte simulada
     document.getElementById('student-selector').style.display = 'block';
   }
 
-  // (Opcional) puedes mantener este método si tienes botón de orden real
   completeOrder() {
     UIHelpers.showNotification('Orden completada con éxito', 'success');
     this.currentOrder = { items: [], total: 0 };
