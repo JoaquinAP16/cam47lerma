@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.app-header');
   if (!header || !window.schoolSettings) return;

@@ -5,17 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Menú Interactivo para el taller de Preparación de Bebidas y Alimentos" />
   <title>Menú Interactivo - Taller de Bebidas y Alimentos</title>
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/deployment.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <meta name="theme-color" content="#3498db" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Menú Interactivo" />
-  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <div id="app" class="app-container">
@@ -26,82 +16,29 @@
 
     <main class="app-content">
       <div id="loading" class="loading-container">
-        <div class="loading-spinner"></div>
         <p>Cargando aplicación...</p>
       </div>
 
-      <div id="student-selector" class="view-container" style="display: none;"></div>
-      <div id="category-grid" class="view-container" style="display: none;"></div>
-      <div id="product-grid" class="view-container" style="display: none;"></div>
-      <div id="order-summary" class="view-container" style="display: none;"></div>
-      <div id="confirmation" class="view-container" style="display: none;"></div>
-      <div id="admin-panel" class="view-container" style="display: none;"></div>
-
-      <div style="text-align:center; margin-top:20px;">
-        <button onclick="generatePurchaseNote(window.app.currentOrder, window.app.currentStudent, 'Nombre del Docente', 'Taller de Alimentos', 'Efectivo')" class="btn btn-primary">
-          🖨️ Imprimir Nota de Compra
-        </button>
+      <div id="student-selector" style="display: none;">
+        <p>Simulación de selector de alumnos</p>
       </div>
 
-      <div class="deployment-info">
-        <h3>Estado del Despliegue</h3>
-        <div class="deployment-status">
-          <span class="status-indicator status-online"></span>
-          <span>Aplicación desplegada y funcionando</span>
-        </div>
-        <p>Versión: <span id="app-version">1.0.0</span></p>
-        <p>Última actualización: <span id="deployment-date">Cargando...</span></p>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="generatePurchaseNote(window.app.currentOrder, window.app.currentStudent, 'Nombre del Docente', 'Taller de Alimentos', 'Efectivo')">
+          🖨️ Imprimir Nota de Compra
+        </button>
       </div>
     </main>
 
     <footer class="app-footer">
       <p>Desarrollado para Escuela de Educación Especial</p>
-      <div class="admin-access" id="admin-access"></div>
     </footer>
-
-    <div class="notifications-container"></div>
   </div>
 
-  <!-- Scripts -->
-  <script src="utils/deployment-config.js"></script>
-  <script src="utils/settings.js"></script>
-  <script src="utils/header-inject.js"></script>
-  <script src="utils/generate-pdf.js"></script>
-  <script src="utils/ui-helpers.js"></script>
-  <script src="components/icon-gallery.js"></script>
-  <script src="components/student-selector.js"></script>
-  <script src="components/category-grid.js"></script>
-  <script src="components/product-grid.js"></script>
-  <script src="components/order-summary.js"></script>
-  <script src="components/confirmation.js"></script>
-  <script src="components/admin-panel.js"></script>
-  <script src="components/app.js"></script>
+  <script src="settings.js"></script>
+  <script src="header-inject.js"></script>
+  <script src="generate-pdf.js"></script>
+  <script src="app.js"></script>
   <script src="main.js"></script>
-
-  <!-- Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registrado con éxito:', registration.scope);
-          })
-          .catch(error => {
-            console.log('Error al registrar el Service Worker:', error);
-          });
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.DEPLOYMENT_CONFIG) {
-        document.getElementById('app-version').textContent = window.DEPLOYMENT_CONFIG.version;
-        document.getElementById('deployment-date').textContent = new Date(window.DEPLOYMENT_CONFIG.deploymentDate).toLocaleDateString('es-ES', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });
-      }
-    });
-  </script>
 </body>
 </html>
