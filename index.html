@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú Interactivo - CAM</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="branding">
+      <img src="logo.png" alt="Logo CAM" />
+      <div>
+        <h1>Menú Interactivo</h1>
+        <p>Taller de Preparación de Bebidas y Alimentos</p>
+      </div>
+    </div>
+    <div class="version-banner">Versión Mejorada</div>
+  </header>
+
+  <main class="main-content">
+    <section class="student-section">
+      <h2>Selecciona un Alumno</h2>
+      <div class="student-grid">
+        <div class="student-card">Ana García</div>
+        <div class="student-card">Carlos López</div>
+        <div class="student-card">María Rodríguez</div>
+        <div class="student-card">Juan Pérez</div>
+      </div>
+      <button class="practice-button" onclick="generatePurchaseNote(window.app.currentOrder, window.app.currentStudent, 'Prof. Ramírez', 'Taller de Bebidas y Alimentos', 'Efectivo')">🖨️ Imprimir Nota de Compra</button>
+    </section>
+
+    <section class="info-box">
+      <h3>Información de la Versión Mejorada</h3>
+      <p>Esta es una versión con diseño renovado y funcionalidad activa de impresión.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Desarrollado para Escuela de Educación Especial
+  </footer>
+
+  <script src="settings.js"></script>
+  <script src="header-inject.js"></script>
+  <script src="generate-pdf.js"></script>
+  <script src="app.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
