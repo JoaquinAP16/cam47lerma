@@ -1,7 +1,25 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   window.iconGallery = new IconGallery();
+
   window.app = new App();
+
+  // Simular estudiante
+  window.app.currentStudent = {
+    name: "María López"
+  };
+
+  // Simular orden
+  window.app.currentOrder = {
+    items: [
+      { id: "agua", name: "Agua", icon: "local_drink", quantity: 2, price: 10, subtotal: 20 },
+      { id: "sandwich", name: "Sándwich", icon: "lunch_dining", quantity: 1, price: 25, subtotal: 25 }
+    ],
+    total: 45
+  };
+
+  // Mostrar mensaje o actualizar interfaz si se requiere
+  console.log("Orden de ejemplo cargada. Estudiante: María López");
 
   const updateCartIndicator = () => {
     const cartIndicator = document.getElementById('cart-indicator');
@@ -21,6 +39,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observer = new MutationObserver(() => updateCartIndicator());
   observer.observe(document.querySelector('.app-content'), { childList: true, subtree: true, attributes: true });
-
   setInterval(updateCartIndicator, 1000);
 });
